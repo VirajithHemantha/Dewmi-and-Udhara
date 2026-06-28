@@ -24,7 +24,7 @@ export const CoupleDetails: React.FC = () => {
         >
           <div className="mb-4 flex flex-col items-center">
             <span className="text-brand-primary uppercase tracking-[0.4em] text-xs sm:text-sm font-bold mb-4 block">The Groom</span>
-            <h3 className="text-6xl sm:text-7xl lg:text-8xl font-display text-stone-800 drop-shadow-sm mb-3">Udhara</h3>
+            <h3 className="text-7xl sm:text-8xl lg:text-9xl font-script text-brand-gold drop-shadow-md mb-3 tracking-wide">Udhara</h3>
             <p className="text-stone-500/90 font-serif italic text-lg sm:text-xl">Son of Mr. & Mrs. Samanthilake</p>
           </div>
         </motion.div>
@@ -39,7 +39,7 @@ export const CoupleDetails: React.FC = () => {
         >
           <div className="mb-4 flex flex-col items-center">
             <span className="text-brand-primary uppercase tracking-[0.4em] text-xs sm:text-sm font-bold mb-4 block">The Bride</span>
-            <h3 className="text-6xl sm:text-7xl lg:text-8xl font-display text-stone-800 drop-shadow-sm mb-3">Dewmi</h3>
+            <h3 className="text-7xl sm:text-8xl lg:text-9xl font-script text-brand-gold drop-shadow-md mb-3 tracking-wide">Dewmi</h3>
             <p className="text-stone-500/90 font-serif italic text-lg sm:text-xl">Daughter of Mr. & Mrs. Rathnayake</p>
           </div>
         </motion.div>

@@ -6,17 +6,15 @@ export const AdminPage: React.FC = () => {
   const [prefix, setPrefix] = useState('Mr. & Mrs.');
   const [guestName, setGuestName] = useState('');
   const [generatedLink, setGeneratedLink] = useState('');
-  const [copied, setCopied] = useState(false);
+  const [copiedLink, setCopiedLink] = useState(false);
+  const [copiedMessage, setCopiedMessage] = useState(false);
 
   const prefixes = [
-    'Mr. & Mrs.',
     'Mr.',
     'Mrs.',
-    'Ms.',
-    'Dr.',
-    'Rev.',
-    'Hon.',
-    'Prof.'
+    'Mr. & Mrs.',
+    'Family',
+    'Dear'
   ];
 
   const handleGenerate = () => {
@@ -28,16 +26,28 @@ export const AdminPage: React.FC = () => {
     url.searchParams.set('name', guestName.trim());
     
     setGeneratedLink(url.toString());
-    setCopied(false);
+    setCopiedLink(false);
+    setCopiedMessage(false);
   };
 
-  const handleCopy = async () => {
+  const handleCopyLink = async () => {
     try {
       await navigator.clipboard.writeText(generatedLink);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      setCopiedLink(true);
+      setTimeout(() => setCopiedLink(false), 2000);
     } catch (err) {
       console.error('Failed to copy link: ', err);
+    }
+  };
+
+  const handleCopyMessage = async () => {
+    try {
+      const message = `Dear ${prefix} ${guestName} ❤️\n\nWith joyful hearts, we warmly invite you and your family to celebrate one of the most special days of our lives as we begin our journey together.\n\nPlease view our wedding invitation and all the event details through the link below 🌐:\n\n${generatedLink}\n\nYour presence would truly mean the world to us, and we would be honored to celebrate this beautiful moment together.\n\nWith love,\n❤️ Udhara & Dewmi`;
+      await navigator.clipboard.writeText(message);
+      setCopiedMessage(true);
+      setTimeout(() => setCopiedMessage(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy message: ', err);
     }
   };
 
@@ -115,24 +125,37 @@ export const AdminPage: React.FC = () => {
                   {generatedLink}
                 </div>
                 
-                <button
-                  onClick={handleCopy}
-                  className={`flex items-center justify-center gap-2 px-8 py-4 rounded-full font-sans tracking-[0.1em] font-bold text-xs uppercase transition-all duration-300 min-w-[140px] ${
-                    copied 
-                      ? 'bg-green-500 text-white shadow-lg shadow-green-500/30' 
-                      : 'bg-white text-brand-primary border border-brand-primary/30 hover:bg-brand-primary/10'
-                  }`}
-                >
-                  {copied ? (
-                    <>
-                      <CheckCircle className="w-4 h-4" /> Copied!
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-4 h-4" /> Copy
-                    </>
-                  )}
-                </button>
+                <div className="flex flex-col gap-3 min-w-[200px]">
+                  <button
+                    onClick={handleCopyLink}
+                    className={`flex items-center justify-center gap-2 px-6 py-4 rounded-full font-sans tracking-[0.1em] font-bold text-xs uppercase transition-all duration-300 w-full ${
+                      copiedLink 
+                        ? 'bg-green-500 text-white shadow-lg shadow-green-500/30' 
+                        : 'bg-white text-brand-primary border border-brand-primary/30 hover:bg-brand-primary/10'
+                    }`}
+                  >
+                    {copiedLink ? (
+                      <><CheckCircle className="w-4 h-4" /> Copied!</>
+                    ) : (
+                      <><Copy className="w-4 h-4" /> Copy Link Only</>
+                    )}
+                  </button>
+
+                  <button
+                    onClick={handleCopyMessage}
+                    className={`flex items-center justify-center gap-2 px-6 py-4 rounded-full font-sans tracking-[0.1em] font-bold text-xs uppercase transition-all duration-300 w-full ${
+                      copiedMessage 
+                        ? 'bg-green-500 text-white shadow-lg shadow-green-500/30' 
+                        : 'bg-brand-primary text-white hover:bg-brand-primary-light shadow-md'
+                    }`}
+                  >
+                    {copiedMessage ? (
+                      <><CheckCircle className="w-4 h-4" /> Copied!</>
+                    ) : (
+                      <><Copy className="w-4 h-4" /> Copy Full Message</>
+                    )}
+                  </button>
+                </div>
               </div>
               
               <div className="mt-4 px-2">

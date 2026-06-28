@@ -11,7 +11,7 @@ import { Gallery } from './components/Gallery';
 import { AddressesSection } from './components/AddressesSection';
 import { RSVPForm } from './components/RSVPForm';
 import { Footer } from './components/Footer';
-import { IntroVideo } from './components/IntroVideo';
+import { Envelope } from './components/Envelope';
 
 import { HeroContent } from './components/HeroContent';
 import { CornerFlowers } from './components/CornerFlowers';
@@ -55,7 +55,7 @@ export default function App() {
 
       <AnimatePresence mode="wait">
         {showIntro ? (
-          <IntroVideo key="intro" onComplete={() => { setShowIntro(false); setShowMain(true); startMusic(); }} />
+          <Envelope key="intro" onComplete={() => { setShowIntro(false); setShowMain(true); startMusic(); }} />
         ) : (
           <motion.main
             key="main"

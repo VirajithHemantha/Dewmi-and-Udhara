@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FloatingPetals } from './FloatingPetals';
+import { Heart } from 'lucide-react';
 
 interface EnvelopeProps {
   onComplete: () => void;
@@ -78,10 +79,10 @@ export const Envelope: React.FC<EnvelopeProps> = ({ onComplete }) => {
                   <Heart className="w-6 h-6 text-brand-gold-deep" />
                 </div>
 
-                <h2 className="text-3xl sm:text-5xl font-display font-medium text-[#4a5770] tracking-tight leading-[1.1] mb-2 sm:mb-3 drop-shadow-sm">
-                  Dimalka <br />
-                  <span className="text-xl sm:text-3xl text-[#cccccc] italic font-light my-1 block">&</span>
-                  Dinindu
+                <h2 className="text-3xl sm:text-5xl font-script text-brand-gold tracking-wide leading-[1.1] mb-2 sm:mb-3 drop-shadow-sm">
+                  Dewmi <br />
+                  <span className="text-xl sm:text-3xl text-brand-gold-light italic font-light my-1 block font-serif">&</span>
+                  Udhara
                 </h2>
 
                 <div className="w-16 sm:w-24 h-[2px] bg-gradient-to-r from-transparent via-[#cccccc] to-transparent mx-auto my-3 sm:my-5" />
@@ -205,7 +206,7 @@ export const Envelope: React.FC<EnvelopeProps> = ({ onComplete }) => {
                       &
                     </span>
                     <span className="text-[#d4af37] font-serif text-3xl sm:text-4xl italic tracking-tighter drop-shadow-[0_2px_4px_rgba(50,0,10,0.9)]">
-                      D
+                      U
                     </span>
                   </div>
 
@@ -216,28 +217,7 @@ export const Envelope: React.FC<EnvelopeProps> = ({ onComplete }) => {
             </AnimatePresence>
           </motion.div>
 
-          {/* Helper Text below envelop */}
-          <AnimatePresence>
-            {!isOpened && (
-              <motion.div
-                className="absolute bottom-12 sm:bottom-16 flex flex-col items-center gap-5 z-50 pointer-events-none"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 30 }}
-                transition={{ delay: 2, duration: 1, ease: 'easeOut' }}
-              >
-                <div className="flex flex-col items-center gap-2">
-                  <p className="text-[#fffdf9] font-serif italic text-2xl sm:text-4xl font-light tracking-wide text-shadow-xl drop-shadow-[0_8px_16px_rgba(10,20,50,0.8)]">
-                    Royal Sri Lankan Invitation
-                  </p>
-                  <p className="text-[#d4af37] font-sans text-[10px] sm:text-xs tracking-[0.5em] uppercase font-bold drop-shadow-md">
-                    Break the seal to reveal
-                  </p>
-                </div>
-                <div className="w-[1.5px] h-16 sm:h-20 bg-gradient-to-b from-[#d4af37] to-transparent animate-[bounce_2s_infinite] shadow-[0_0_20px_rgba(212,175,55,0.6)]" />
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {/* Helper Text removed per user request */}
         </motion.div>
       )}
     </AnimatePresence>

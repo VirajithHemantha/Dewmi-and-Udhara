@@ -14,18 +14,14 @@ export const HeroContent: React.FC = () => {
 
   return (
     <section className="relative min-h-screen py-24 sm:py-32 flex items-center justify-center overflow-hidden">
-      <CornerFlowers position="all" opacity={0.8} scale={1.8} />
+      <CornerFlowers position="top-left" opacity={0.8} scale={1.8} />
       {/* Background Video with Elegant Overlays */}
       <div className="absolute inset-0 z-0 bg-brand-ivory overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        <img
+          src="/images/2.jpeg"
+          alt="Dewmi and Udhara"
           className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/give_beautiful_live_video_202604291917.mp4" type="video/mp4" />
-        </video>
+        />
         <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]" />
         <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/10 via-transparent to-brand-primary/5" />
         <div className="absolute inset-0 bg-brand-primary/5 mix-blend-multiply" />
@@ -51,9 +47,9 @@ export const HeroContent: React.FC = () => {
           </span>
 
           <div className="relative mb-12 w-full flex justify-center">
-            <h1 className="relative text-6xl sm:text-8xl lg:text-9xl font-display text-stone-800 leading-tight drop-shadow-sm">
+            <h1 className="relative text-7xl sm:text-8xl lg:text-9xl font-script text-brand-gold leading-tight drop-shadow-md tracking-wide">
               Dewmi <br className="sm:hidden" />
-              <span className="text-brand-primary-light italic font-light mx-4 sm:mx-8 text-5xl sm:text-7xl lg:text-8xl inline-block -translate-y-2 sm:-translate-y-4">&</span>
+              <span className="text-brand-gold-light font-serif italic font-light mx-4 sm:mx-8 text-5xl sm:text-7xl lg:text-8xl inline-block -translate-y-2 sm:-translate-y-4">&</span>
               <br className="sm:hidden" />
               Udhara
             </h1>

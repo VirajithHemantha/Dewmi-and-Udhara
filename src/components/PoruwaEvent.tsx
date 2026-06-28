@@ -23,8 +23,8 @@ export const PoruwaEvent: React.FC = () => {
                 </span>
               </div>
 
-              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-display text-stone-800 mb-8 leading-[1.1] drop-shadow-sm">
-                Poruwa & <span className="italic font-light text-poruwa-primary">Reception</span>
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-display text-brand-gold mb-8 leading-[1.1] drop-shadow-sm">
+                Poruwa & <span className="italic font-light">Reception</span>
               </h2>
 
               <p className="text-stone-500/90 font-serif text-lg sm:text-xl leading-relaxed mb-16 max-w-lg">
