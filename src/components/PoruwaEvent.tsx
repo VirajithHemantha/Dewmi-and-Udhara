@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Clock, Calendar, Heart, Sparkles, MapPin } from 'lucide-react';
+import { Clock, Calendar, Heart, Sparkles, MapPin, Crown, Utensils, Music, Car } from 'lucide-react';
 
 export const PoruwaEvent: React.FC = () => {
   return (
@@ -16,12 +16,7 @@ export const PoruwaEvent: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: "easeOut" }}
             >
-              <div className="inline-flex items-center gap-4 mb-6">
-                <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-l from-poruwa-primary/60 to-transparent" />
-                <span className="text-poruwa-primary uppercase tracking-[0.4em] sm:tracking-[0.5em] text-[10px] sm:text-[11px] font-bold drop-shadow-sm">
-                  Day Two
-                </span>
-              </div>
+
 
               <h2 className="text-5xl sm:text-6xl lg:text-7xl font-display text-brand-gold mb-8 leading-[1.1] drop-shadow-sm">
                 Poruwa & <span className="italic font-light">Reception</span>
@@ -46,42 +41,52 @@ export const PoruwaEvent: React.FC = () => {
 
                 {/* Timeline Items */}
                 <div className="relative group">
-                  <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-poruwa-primary rounded-full border border-poruwa-primary shadow-md flex items-center justify-center transform group-hover:scale-110 transition-all duration-500">
-                    <Heart className="w-5 h-5 text-white" />
+                  <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border-2 border-brand-gold/60 shadow-[0_4px_10px_rgba(212,175,55,0.15)] flex items-center justify-center transform group-hover:scale-110 group-hover:border-brand-gold transition-all duration-500 overflow-hidden">
+                    <img src="/icons/poruwa.png" alt="Poruwa" className="w-7 h-7 object-contain mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <div>
-                    <h4 className="font-serif text-xl sm:text-2xl text-stone-800 mb-1 group-hover:text-poruwa-primary transition-colors duration-500">05:00 PM</h4>
-                    <p className="text-stone-500/80 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-bold">Poruwa Ceremony</p>
+                    <h4 className="font-serif text-xl sm:text-2xl text-stone-800 mb-1 group-hover:text-brand-gold transition-colors duration-500">Poruwa ceremony</h4>
+                    <p className="text-stone-500/80 text-[11px] sm:text-[13px] uppercase tracking-[0.1em] font-bold">5.00pm</p>
                   </div>
                 </div>
 
                 <div className="relative group">
-                  <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-poruwa-primary/30 shadow-sm flex items-center justify-center group-hover:border-poruwa-primary transition-all duration-500">
-                    <Clock className="w-5 h-5 text-poruwa-light" />
+                  <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border-2 border-brand-gold/60 shadow-[0_4px_10px_rgba(212,175,55,0.15)] flex items-center justify-center transform group-hover:scale-110 group-hover:border-brand-gold transition-all duration-500 overflow-hidden">
+                    <img src="/icons/entrance.png" alt="Entrance" className="w-7 h-7 object-contain mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <div>
-                    <h4 className="font-serif text-xl sm:text-2xl text-stone-800 mb-1 group-hover:text-poruwa-primary transition-colors duration-500">06:30 PM</h4>
-                    <p className="text-stone-500/80 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-bold">Cocktails & Canapés</p>
+                    <h4 className="font-serif text-xl sm:text-2xl text-stone-800 mb-1 group-hover:text-brand-gold transition-colors duration-500">Grand Entrance</h4>
+                    <p className="text-stone-500/80 text-[11px] sm:text-[13px] uppercase tracking-[0.1em] font-bold">7.00pm</p>
                   </div>
                 </div>
 
                 <div className="relative group">
-                  <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-poruwa-primary/30 shadow-sm flex items-center justify-center group-hover:border-poruwa-primary transition-all duration-500">
-                    <Clock className="w-5 h-5 text-poruwa-light" />
+                  <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border-2 border-brand-gold/60 shadow-[0_4px_10px_rgba(212,175,55,0.15)] flex items-center justify-center transform group-hover:scale-110 group-hover:border-brand-gold transition-all duration-500 overflow-hidden">
+                    <img src="/icons/buffet.png" alt="Buffet" className="w-7 h-7 object-contain mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <div>
-                    <h4 className="font-serif text-xl sm:text-2xl text-stone-800 mb-1 group-hover:text-poruwa-primary transition-colors duration-500">07:30 PM</h4>
-                    <p className="text-stone-500/80 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-bold">Reception Begins</p>
+                    <h4 className="font-serif text-xl sm:text-2xl text-stone-800 mb-1 group-hover:text-brand-gold transition-colors duration-500">Buffet Time</h4>
+                    <p className="text-stone-500/80 text-[11px] sm:text-[13px] uppercase tracking-[0.1em] font-bold">8.00pm</p>
                   </div>
                 </div>
 
                 <div className="relative group">
-                  <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-poruwa-primary/30 shadow-sm flex items-center justify-center group-hover:border-poruwa-primary transition-all duration-500">
-                    <Clock className="w-5 h-5 text-poruwa-light" />
+                  <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border-2 border-brand-gold/60 shadow-[0_4px_10px_rgba(212,175,55,0.15)] flex items-center justify-center transform group-hover:scale-110 group-hover:border-brand-gold transition-all duration-500 overflow-hidden">
+                    <img src="/icons/party.png" alt="Party" className="w-7 h-7 object-contain mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <div>
-                    <h4 className="font-serif text-xl sm:text-2xl text-stone-800 mb-1 group-hover:text-poruwa-primary transition-colors duration-500">12:00 AM</h4>
-                    <p className="text-stone-500/80 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-bold">After-Party</p>
+                    <h4 className="font-serif text-xl sm:text-2xl text-stone-800 mb-1 group-hover:text-brand-gold transition-colors duration-500">Lets party</h4>
+                    <p className="text-stone-500/80 text-[11px] sm:text-[13px] uppercase tracking-[0.1em] font-bold">9.30pm</p>
+                  </div>
+                </div>
+
+                <div className="relative group">
+                  <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border-2 border-brand-gold/60 shadow-[0_4px_10px_rgba(212,175,55,0.15)] flex items-center justify-center transform group-hover:scale-110 group-hover:border-brand-gold transition-all duration-500 overflow-hidden">
+                    <img src="/icons/car.png" alt="Car" className="w-7 h-7 object-contain mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <div>
+                    <h4 className="font-serif text-xl sm:text-2xl text-stone-800 mb-1 group-hover:text-brand-gold transition-colors duration-500">Going away</h4>
+                    <p className="text-stone-500/80 text-[11px] sm:text-[13px] uppercase tracking-[0.1em] font-bold">11.52 pm</p>
                   </div>
                 </div>
 

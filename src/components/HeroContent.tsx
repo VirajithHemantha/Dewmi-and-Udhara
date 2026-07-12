@@ -64,14 +64,14 @@ export const HeroContent: React.FC = () => {
 
           {/* Stacked Names */}
           <div className="relative mb-12 w-full flex flex-col items-center justify-center gap-2 sm:gap-4">
-            <h1 className="text-6xl sm:text-7xl lg:text-[7rem] font-serif uppercase tracking-[0.1em] sm:tracking-[0.15em] leading-none text-transparent bg-clip-text bg-gradient-to-br from-[#ffffff] via-[#D4AF37] to-[#8A6811] drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)] [text-shadow:0_0_20px_rgba(212,175,55,0.5)]">
-              DEWMI
+            <h1 className="py-4 text-[5rem] sm:text-[7rem] lg:text-[9rem] font-script tracking-wide leading-[1.2] text-transparent bg-clip-text bg-gradient-to-br from-[#ffffff] via-[#D4AF37] to-[#8A6811] drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)] [text-shadow:0_0_20px_rgba(212,175,55,0.5)]">
+              Dewmi
             </h1>
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#ffffff] via-[#D4AF37] to-[#8A6811] font-serif italic font-light text-6xl sm:text-7xl lg:text-[8rem] drop-shadow-[0_4px_15px_rgba(0,0,0,0.6)] [text-shadow:0_0_30px_rgba(212,175,55,0.6),2px_2px_3px_rgba(255,255,255,0.3)] leading-none px-4 -my-4 sm:-my-8 z-10">
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#ffffff] via-[#D4AF37] to-[#8A6811] font-serif italic font-light text-5xl sm:text-6xl lg:text-[7rem] drop-shadow-[0_4px_15px_rgba(0,0,0,0.6)] [text-shadow:0_0_30px_rgba(212,175,55,0.6),2px_2px_3px_rgba(255,255,255,0.3)] leading-[1.2] px-4 -my-8 sm:-my-12 z-10 py-4">
               &
             </span>
-            <h1 className="text-6xl sm:text-7xl lg:text-[7rem] font-serif uppercase tracking-[0.1em] sm:tracking-[0.15em] leading-none text-transparent bg-clip-text bg-gradient-to-br from-[#ffffff] via-[#D4AF37] to-[#8A6811] drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)] [text-shadow:0_0_20px_rgba(212,175,55,0.5)]">
-              UDHARA
+            <h1 className="py-4 text-[5rem] sm:text-[7rem] lg:text-[9rem] font-script tracking-wide leading-[1.2] text-transparent bg-clip-text bg-gradient-to-br from-[#ffffff] via-[#D4AF37] to-[#8A6811] drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)] [text-shadow:0_0_20px_rgba(212,175,55,0.5)]">
+              Udhara
             </h1>
           </div>
 
