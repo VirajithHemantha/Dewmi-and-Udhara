@@ -3,23 +3,23 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X, ZoomIn } from 'lucide-react';
 
 const images = [
+  { id: 19, url: '/images/DSC04299.jpg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'Together Always' },
   { id: 1, url: '/images/1.jpeg', fallback: 'https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=800&auto=format&fit=crop', title: 'The Beginning' },
   { id: 2, url: '/images/DSC02146.jpg', fallback: 'https://images.unsplash.com/photo-1522673607200-164d1f624698?q=80&w=800&auto=format&fit=crop', title: 'Our Journey' },
   { id: 4, url: '/images/4.jpeg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'Endless Love' },
-  { id: 5, url: '/images/5.jpeg', fallback: 'https://images.unsplash.com/photo-1519225421980-715cb02151ff?q=80&w=800&auto=format&fit=crop', title: 'Forever Together' },
-  { id: 6, url: '/images/DSC02208.jpg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'Love Always' },
-  { id: 7, url: '/images/7.jpeg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'Beautiful Moments' },
-  { id: 8, url: '/images/8.jpeg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'Cherished Memories' },
   { id: 9, url: '/images/DSC02295.jpg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'True Love' },
-  { id: 10, url: '/images/10.jpeg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'Soulmates' },
+  { id: 5, url: '/images/5.jpeg', fallback: 'https://images.unsplash.com/photo-1519225421980-715cb02151ff?q=80&w=800&auto=format&fit=crop', title: 'Forever Together' },
   { id: 11, url: '/images/DSC02118.jpg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'A New Chapter' },
+  { id: 7, url: '/images/7.jpeg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'Beautiful Moments' },
   { id: 12, url: '/images/DSC02281.jpg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'Joyful Hearts' },
+  { id: 8, url: '/images/8.jpeg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'Cherished Memories' },
   { id: 13, url: '/images/DSC02502.jpg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'Sunset Glow' },
+  { id: 10, url: '/images/10.jpeg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'Soulmates' },
   { id: 14, url: '/images/DSC02770.jpg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'Hand in Hand' },
   { id: 15, url: '/images/DSC03041.jpg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'The Look of Love' },
   { id: 16, url: '/images/DSC03492.jpg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'Golden Hour' },
-  { id: 17, url: '/images/DSC04141.jpg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'Pure Joy' },
-  { id: 18, url: '/images/DSC04446.jpg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'Forever Starts Now' },
+  { id: 17, url: '/images/DSC04123.jpg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'Pure Magic' },
+  { id: 18, url: '/images/DSC02979.jpg', fallback: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop', title: 'Everlasting Love' },
 ];
 
 export const Gallery: React.FC = () => {

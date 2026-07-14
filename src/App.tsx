@@ -44,7 +44,6 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen font-sans selection:bg-brand-gold selection:text-white overflow-x-hidden bg-brand-ivory">
-      <FloatingPetals />
       
       {/* Background Music */}
       <audio
@@ -64,6 +63,7 @@ export default function App() {
             transition={{ duration: 2, ease: "easeInOut" }}
             className="relative z-10"
           >
+            <FloatingPetals />
             {/* Music Toggle Button */}
             <button
               onClick={toggleMusic}
@@ -122,17 +122,19 @@ export default function App() {
               <AddressesSection />
             </section>
 
-            <section id="gallery">
+            <section id="gallery" className="relative z-50 bg-brand-ivory">
               <Gallery />
             </section>
 
-            <section id="rsvp" className="py-16 sm:py-32 bg-brand-ivory relative overflow-hidden">
+            <section id="rsvp" className="py-16 sm:py-32 bg-brand-ivory relative z-50 overflow-hidden">
               <CornerFlowers position="top-right" opacity={0.6} scale={1.6} />
               <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-20 pointer-events-none" />
               <RSVPForm />
             </section>
 
-            <Footer />
+            <div className="relative z-50 bg-brand-ivory">
+              <Footer />
+            </div>
           </motion.main>
         )}
       </AnimatePresence>

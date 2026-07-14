@@ -54,7 +54,7 @@ export const HeroContent: React.FC = () => {
           </span>
 
           {/* Ornate Divider under text */}
-          <div className="flex items-center justify-center gap-2 mb-24 sm:mb-32">
+          <div className="flex items-center justify-center gap-2 mb-8 sm:mb-32">
             <div className="h-[1.5px] w-10 sm:w-16 bg-gradient-to-l from-[#D4AF37] to-transparent opacity-80" />
             <div className="w-4 h-4 rotate-45 border-2 border-[#D4AF37] opacity-80 flex items-center justify-center">
                <div className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full" />
@@ -63,7 +63,7 @@ export const HeroContent: React.FC = () => {
           </div>
 
           {/* Stacked Names */}
-          <div className="relative mb-12 w-full flex flex-col items-center justify-center gap-2 sm:gap-4">
+          <div className="relative mb-12 -mt-4 sm:mt-0 w-full flex flex-col items-center justify-center gap-2 sm:gap-4">
             <h1 className="py-4 text-[5rem] sm:text-[7rem] lg:text-[9rem] font-script tracking-wide leading-[1.2] text-transparent bg-clip-text bg-gradient-to-br from-[#ffffff] via-[#D4AF37] to-[#8A6811] drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)] [text-shadow:0_0_20px_rgba(212,175,55,0.5)]">
               Dewmi
             </h1>
