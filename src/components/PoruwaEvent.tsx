@@ -108,6 +108,7 @@ export const PoruwaEvent: React.FC = () => {
                 <img 
                   src="/images/9.jpeg" 
                   alt="Poruwa Ceremony" 
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-poruwa-primary/20 to-transparent mix-blend-overlay opacity-60 group-hover:opacity-30 transition-opacity duration-1000" />

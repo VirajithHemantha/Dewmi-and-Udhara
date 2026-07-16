@@ -36,6 +36,7 @@ export const AddressesSection: React.FC = () => {
             <img 
               src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=800"
               alt="Mansion Dining Room Backdrop"
+              loading="lazy"
               className="w-full h-full object-cover filter mix-blend-overlay"
               referrerPolicy="no-referrer"
             />
