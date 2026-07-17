@@ -21,7 +21,9 @@ export default function App() {
   const [showIntro, setShowIntro] = useState(true);
   const [showMain, setShowMain] = useState(false);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const [showPetals, setShowPetals] = useState(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [galleryNode, setGalleryNode] = useState<HTMLDivElement | null>(null);
 
   if (window.location.pathname === '/admin') {
     return <AdminPage />;
@@ -34,6 +36,17 @@ export default function App() {
       }).catch(err => console.log("Auto-play blocked: ", err));
     }
   }, []);
+
+  useEffect(() => {
+    if (!galleryNode) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setShowPetals(!entry.isIntersecting),
+      { threshold: 0, rootMargin: '0px' }
+    );
+    observer.observe(galleryNode);
+    return () => observer.disconnect();
+  }, [galleryNode]);
 
   const weddingDate = new Date('2026-09-03T17:00:00');
 
@@ -77,7 +90,7 @@ export default function App() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="relative z-10 w-full"
           >
-            <FloatingPetals />
+            {showPetals && <FloatingPetals />}
             {/* Music Toggle Button */}
             <button
               onClick={toggleMusic}
@@ -137,18 +150,20 @@ export default function App() {
               <AddressesSection />
             </section>
 
-            <section id="gallery" className="relative bg-brand-ivory">
-              <Gallery />
-            </section>
+            <div ref={setGalleryNode}>
+              <section id="gallery" className="relative bg-brand-ivory">
+                <Gallery />
+              </section>
 
-            <section id="rsvp" className="py-16 sm:py-32 bg-brand-ivory relative overflow-hidden">
-              <CornerFlowers position="top-right" opacity={0.6} scale={1.6} />
-              <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-20 pointer-events-none" />
-              <RSVPForm />
-            </section>
+              <section id="rsvp" className="py-16 sm:py-32 bg-brand-ivory relative overflow-hidden">
+                <CornerFlowers position="top-right" opacity={0.6} scale={1.6} />
+                <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-20 pointer-events-none" />
+                <RSVPForm />
+              </section>
 
-            <div className="relative bg-brand-ivory">
-              <Footer />
+              <div className="relative bg-brand-ivory">
+                <Footer />
+              </div>
             </div>
           </motion.main>
         )}
