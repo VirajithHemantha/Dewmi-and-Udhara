@@ -4,13 +4,7 @@ import { Sparkles, Heart } from 'lucide-react';
 import { CornerFlowers } from './CornerFlowers';
 
 export const HeroContent: React.FC = () => {
-  const searchParams = new URLSearchParams(window.location.search);
-  const prefix = searchParams.get('prefix');
-  const name = searchParams.get('name');
-  
-  const invitationText = (prefix && name)
-    ? `We cordially invite ${prefix} ${name}`
-    : `Together with our families, we joyfully invite you to join us`;
+  const invitationText = `Together with our families, we joyfully invite you to join us`;
 
   return (
     <section className="relative min-h-screen pt-12 pb-24 sm:py-32 flex items-start sm:items-center justify-center overflow-hidden">
@@ -23,6 +17,8 @@ export const HeroContent: React.FC = () => {
           src="/images/2.jpeg"
           alt="Dewmi and Udhara"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+          decoding="async"
         />
         {/* Soft wash to make text readable but keep image colors */}
         <div className="absolute inset-0 bg-white/20" />

@@ -42,7 +42,7 @@ export const AdminPage: React.FC = () => {
 
   const handleCopyMessage = async () => {
     try {
-      const message = `Dear ${prefix} ${guestName} ❤️\n\nWith joyful hearts, we warmly invite you and your family to celebrate one of the most special days of our lives as we begin our journey together.\n\nPlease view our wedding invitation and all the event details through the link below 🌐:\n\n${generatedLink}\n\nYour presence would truly mean the world to us, and we would be honored to celebrate this beautiful moment together.\n\nWith love,\n❤️ Udhara & Dewmi`;
+      const message = `Dear ${prefix} ${guestName} ❤️\n\nWith joyful hearts, we warmly invite you  to celebrate one of the most special days of our lives as we begin our journey together.\n\nPlease view our wedding invitation and all the event details through the link below 🌐:\n\n${generatedLink}\n\nYour presence would truly mean the world to us, and we would be honored to celebrate this beautiful moment together.\n\nWith love,\n❤️ Udhara & Dewmi`;
       await navigator.clipboard.writeText(message);
       setCopiedMessage(true);
       setTimeout(() => setCopiedMessage(false), 2000);

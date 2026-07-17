@@ -15,12 +15,17 @@ import { Envelope } from './components/Envelope';
 
 import { HeroContent } from './components/HeroContent';
 import { CornerFlowers } from './components/CornerFlowers';
+import { AdminPage } from './AdminPage';
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
   const [showMain, setShowMain] = useState(false);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  if (window.location.pathname === '/admin') {
+    return <AdminPage />;
+  }
 
   useEffect(() => {
     if (audioRef.current) {
@@ -52,7 +57,7 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen font-sans selection:bg-brand-gold selection:text-white overflow-x-hidden bg-brand-ivory">
-      
+
       {/* Background Music */}
       <audio
         ref={audioRef}
@@ -69,14 +74,15 @@ export default function App() {
             key="main"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 2, ease: "easeInOut" }}
-            className="relative z-10"
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative z-10 w-full"
           >
             <FloatingPetals />
             {/* Music Toggle Button */}
             <button
               onClick={toggleMusic}
-              className="fixed bottom-8 right-8 z-[60] w-14 h-14 glass rounded-full flex items-center justify-center text-brand-gold-deep hover:bg-stone-800 hover:text-brand-champagne transition-all active:scale-90 shadow-2xl group"
+              className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-[60] w-12 h-12 sm:w-14 sm:h-14 glass rounded-full flex items-center justify-center text-brand-gold-deep hover:bg-stone-800 hover:text-brand-champagne transition-all active:scale-90 shadow-2xl group touch-manipulation"
+              style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
             >
               <div className="absolute inset-0 rounded-full border border-brand-gold/20 scale-110 group-hover:scale-125 transition-transform" />
               {isMusicPlaying ? <Volume2 className="w-6 h-6" /> : <VolumeX className="w-6 h-6" />}
@@ -94,18 +100,18 @@ export default function App() {
                 <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[70%] bg-brand-gold/5 blur-[120px] rounded-full" />
                 <div className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[70%] bg-brand-gold-light/10 blur-[120px] rounded-full" />
               </div>
-              
+
               <div className="relative z-10 max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
                 <div className="inline-flex items-center gap-4 mb-6">
                   <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-brand-gold/60" />
                   <span className="text-brand-gold uppercase tracking-[0.5em] text-[11px] font-semibold font-sans drop-shadow-sm">The Final Countdown</span>
                   <div className="w-12 h-[1px] bg-gradient-to-l from-transparent to-brand-gold/60" />
                 </div>
-                
+
                 <h2 className="text-5xl sm:text-7xl font-display text-stone-800 tracking-tight mb-6 drop-shadow-sm">
                   Until We Say <span className="italic text-brand-gold font-light">"I Do"</span>
                 </h2>
-                
+
                 <p className="text-lg sm:text-xl font-serif italic text-stone-600 mb-12 sm:mb-16 max-w-2xl text-center leading-relaxed">
                   Time is standing still as we eagerly await the moment our forever begins.
                 </p>
@@ -131,17 +137,17 @@ export default function App() {
               <AddressesSection />
             </section>
 
-            <section id="gallery" className="relative z-50 bg-brand-ivory">
+            <section id="gallery" className="relative bg-brand-ivory">
               <Gallery />
             </section>
 
-            <section id="rsvp" className="py-16 sm:py-32 bg-brand-ivory relative z-50 overflow-hidden">
+            <section id="rsvp" className="py-16 sm:py-32 bg-brand-ivory relative overflow-hidden">
               <CornerFlowers position="top-right" opacity={0.6} scale={1.6} />
               <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-20 pointer-events-none" />
               <RSVPForm />
             </section>
 
-            <div className="relative z-50 bg-brand-ivory">
+            <div className="relative bg-brand-ivory">
               <Footer />
             </div>
           </motion.main>
