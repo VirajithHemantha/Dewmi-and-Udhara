@@ -5,15 +5,17 @@ import { Heart } from 'lucide-react';
 
 interface EnvelopeProps {
   onComplete: () => void;
+  onOpen?: () => void;
 }
 
-export const Envelope: React.FC<EnvelopeProps> = ({ onComplete }) => {
+export const Envelope: React.FC<EnvelopeProps> = ({ onComplete, onOpen }) => {
   const [isOpened, setIsOpened] = useState(false);
   const [isDone, setIsDone] = useState(false);
 
   const handleOpen = () => {
     if (isOpened) return;
     setIsOpened(true);
+    if (onOpen) onOpen();
     setTimeout(() => {
       setIsDone(true);
       setTimeout(onComplete, 800);

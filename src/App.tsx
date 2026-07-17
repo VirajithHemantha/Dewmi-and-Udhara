@@ -63,7 +63,7 @@ export default function App() {
 
       <AnimatePresence mode="wait">
         {showIntro ? (
-          <Envelope key="intro" onComplete={() => { setShowIntro(false); setShowMain(true); startMusic(); }} />
+          <Envelope key="intro" onOpen={startMusic} onComplete={() => { setShowIntro(false); setShowMain(true); }} />
         ) : (
           <motion.main
             key="main"
