@@ -22,6 +22,14 @@ export default function App() {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.play().then(() => {
+        setIsMusicPlaying(true);
+      }).catch(err => console.log("Auto-play blocked: ", err));
+    }
+  }, []);
+
   const weddingDate = new Date('2026-09-03T17:00:00');
 
   const startMusic = () => {
@@ -50,6 +58,7 @@ export default function App() {
         ref={audioRef}
         src="/01-Alex_Warren_-_Ordinary_(Wedding_version).mp3"
         loop
+        autoPlay
       />
 
       <AnimatePresence mode="wait">
